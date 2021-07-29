@@ -1,0 +1,47 @@
+#N canvas -31 340 824 651 12;
+#X obj 236 450 dac~;
+#X obj 188 75 routeOSC /oscP5;
+#X obj 188 44 unpackOSC;
+#X msg 513 32 \; pd dsp 1;
+#X msg 597 32 \; pd dsp 0;
+#X obj 56 169 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 235 166 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 436 169 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 188 11 udpreceive 9001;
+#X obj 436 281 readsf~ 2;
+#X obj 235 276 readsf~ 2;
+#X obj 56 275 readsf~ 2;
+#X obj 188 106 routeOSC /deathsf /winsf /jumpsf;
+#X msg 96 244 1;
+#X msg 272 242 1;
+#X msg 473 247 1;
+#X msg 56 212 open smb_mariodie2.wav;
+#X msg 235 212 open smb_stage_clear2.wav;
+#X msg 436 211 open smb_jump-super2.wav;
+#X connect 1 0 12 0;
+#X connect 2 0 1 0;
+#X connect 5 0 16 0;
+#X connect 6 0 17 0;
+#X connect 7 0 18 0;
+#X connect 8 0 2 0;
+#X connect 9 0 0 0;
+#X connect 9 1 0 1;
+#X connect 10 0 0 0;
+#X connect 10 1 0 1;
+#X connect 11 0 0 0;
+#X connect 11 1 0 1;
+#X connect 12 0 5 0;
+#X connect 12 1 6 0;
+#X connect 12 2 7 0;
+#X connect 13 0 11 0;
+#X connect 14 0 10 0;
+#X connect 15 0 9 0;
+#X connect 16 0 11 0;
+#X connect 16 0 13 0;
+#X connect 17 0 10 0;
+#X connect 17 0 14 0;
+#X connect 18 0 9 0;
+#X connect 18 0 15 0;
